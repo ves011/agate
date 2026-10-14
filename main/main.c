@@ -54,7 +54,7 @@ void mqtt_exec_fun(int argc, char **argv)
 	{
 	if(argc)
 		{
-		//ESP_LOGI(TAG, "MQTT command: |%s| - %d", argv[0], strlen(argv[0]));
+		ESP_LOGI(TAG, "MQTT command: |%s| - %d", argv[0], strlen(argv[0]));
 		if(strcmp("gate", argv[0]) == 0)
 			do_gateop(argc, argv);
 		if(strcmp("wifi", argv[0]) == 0)
@@ -122,6 +122,7 @@ void app_main(void)
 	register_system();
 	register_wifi();
 	register_gateop();
+	controller_op_registered = 1;
 
 #ifdef WITH_CONSOLE
 	esp_console_repl_t *repl = NULL;

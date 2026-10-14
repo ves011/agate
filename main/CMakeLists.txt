@@ -11,7 +11,6 @@ SRCS 					"main.c"
 						"../gate_op/gateop.c"
 						
 INCLUDE_DIRS 			"."
-						"../certs"
 						"../../esp32_common"
     					"../../esp32_common/cmds"
     					"../../esp32_common/tcp"
