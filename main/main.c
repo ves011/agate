@@ -113,7 +113,7 @@ void app_main(void)
 		ESP_LOGE(TAG, "Error retrieving certificates from NVS, MQTT broker connection not possible");
 		
 	if(mqtt_start(mqtt_exec_fun) != ESP_OK)
-		esp_restart();
+		RESTART("mqtt client failed to start");
 	
 	tcp_log_init(dev_conf.cs);
 	esp_log_set_vprintf(my_log_vprintf);
