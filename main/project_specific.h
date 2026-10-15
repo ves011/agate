@@ -23,7 +23,7 @@
 
 #define WITH_CONSOLE
 #define COMM_PROTO	MQTT_PROTO
-#define CONFIG_BROKER_URL 			"mqtts://proxy.gnet:1886"
+//#define CONFIG_BROKER_URL 			"mqtts://proxy.gnet:1886"
 #define MQTT_RECONNECT_TIMEOUT_MS	10000
 #define ENABLE_MQTT_FAIL_REBOOT		1
 #define MQTT_FAILATTEMPTS			10		//this means a rebbot is triggered if MQTT_FAILATTEMPTS in a row = 100 sec

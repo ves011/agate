@@ -49,6 +49,7 @@
 esp_app_desc_t bpart_desc;
 int restart_in_progress;
 int controller_op_registered;
+//extern const common_app_desc_t common_app_desc;
 
 void mqtt_exec_fun(int argc, char **argv)
 	{
@@ -87,7 +88,8 @@ void app_main(void)
 	memset(&bpart_desc, 0, sizeof(bpart_desc));
 	const esp_partition_t *bootp = esp_ota_get_boot_partition();
 	esp_ota_get_partition_description(bootp, &bpart_desc);
-
+	ESP_LOGI(TAG, "Common components version: %s", common_app_desc.common_version);
+	ESP_LOGI(TAG, "Application version: %s", bpart_desc.version);
 	setenv("TZ","EET-2EEST,M3.4.0/03,M10.4.0/04",1);
 #if FILESYSTEM == LITTLEFS
 	littlefs_storage_check();

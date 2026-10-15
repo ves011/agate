@@ -37,3 +37,7 @@ REQUIRES
         esp_driver_gpio	
 		esp_http_client					
 						)
+target_link_libraries(${COMPONENT_LIB} INTERFACE "-ucommon_app_desc")
+target_compile_definitions(${COMPONENT_LIB} PRIVATE
+    COMMON_REPO_VERSION="${COMMON_REPO_VERSION}"
+    )
